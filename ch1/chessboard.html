@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    // capture everything in a function
+function drawBoard(squareSize) {
+
+  // odd lines should start with a space
+  // even lines should start with a #
+
+  for (let i = 1; i <= squareSize; i++) {
+    if( i % 2 !== 0) {
+      printLine(1, squareSize);
+    }
+    else {
+      printLine(0, squareSize);
+    }
+  }
+}
+
+function printLine(switchNum, squareSize) {
+  var lineText = "";
+  if (switchNum === 1) {
+    for (let j = 1; j <= squareSize; j++) {
+      if( j % 2 !== 0) {
+        lineText = lineText + "0";
+      }
+      else {
+        lineText = lineText + "#"
+      }
+    }
+    console.log(lineText);
+    lineText = "";
+  }
+  else {
+    for (let k = 0; k < squareSize; k++) {
+      if( k % 2 !== 0) {
+        lineText = lineText + "#";
+      }
+      else {
+        lineText = lineText + "0";
+      }
+    }
+    console.log(lineText);
+    lineText = "";
+  }
+}
+
+drawBoard(8);
+  </script>
+</body>
+</html>
